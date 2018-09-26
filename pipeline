@@ -1,0 +1,21 @@
+pipeline {
+	agent any 
+	stages {
+		stage('Build'){
+			steps {
+			    sh '''
+			    echo 'build'
+			    pwd
+			    /usr/bin/git credentialsId: '6ca09c16-ffdb-4024-85f3-c651b625c498', url: 'https://github.com/qjpoo/hello_world.git'
+			    
+			    '''
+			}
+		}
+		stage('Test'){
+			steps { echo 'build'}
+		}
+		stage('Deploy'){
+			steps { echo 'build'}
+		}		
+	}
+}
